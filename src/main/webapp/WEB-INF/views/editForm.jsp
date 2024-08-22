@@ -27,7 +27,7 @@
 			<label for="txt-company">회사(company): </label> 
 			<input id="txt-company" type="text" name="company" value="" placeholder="${personVo.company}">
 		</div>
-		<input type="hidden" name="personId" value="${personVo.personId}">
+		<input type="text" name="personId" value="${personVo.personId}">
 		<button type="submit">수정(전송)</button>
 	</form>
 	<br><br>
