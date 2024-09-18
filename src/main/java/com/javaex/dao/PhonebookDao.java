@@ -1,6 +1,8 @@
 package com.javaex.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,7 @@ public class PhonebookDao {
 	public int deletePerson(int no) {
 		System.out.println("PhonebookDao.deletePerson()");
 		//mybatis한테 넘겨서 해줘! 하면 해줌 막 지가 디비 연결도 하고 쿼리문 다 쓰고 트라이 캐치도 쓰고 다해줌
-		int count = sqlSession.delete("phonebook.delete", no);
+		int count = sqlSession.delete("phonebooktest.delete", no);
 
 		return count;
 	}
@@ -35,7 +37,7 @@ public class PhonebookDao {
 	// 사랑 1명 정보 수정하기 
 	public int updatePerson(PersonVo personVo) {
 		System.out.println("PhonebookDao.updatePerson()");
-		int count = sqlSession.update("phonebook.update", personVo);
+		int count = sqlSession.update("phonebooktest.update", personVo);
 
 		return count;
 	}
@@ -44,17 +46,17 @@ public class PhonebookDao {
 	public PersonVo getPersonOne(int no) {
 		System.out.println("PhonebookDao.getPersonOne()");
 		
-		PersonVo personVo = sqlSession.selectOne("phonebook.selectOne", no);
+		PersonVo personVo = sqlSession.selectOne("phonebooktest.selectOne", no);
 		
 		return personVo;
 	}
-
+	
 	// 사람정보 저장
 	public int insertPerson(PersonVo personVo) {
 		System.out.println("PhonebookDao.insertPerson()");
 		
-		int count = sqlSession.insert("phonebook.insert", personVo);
-
+		int count = sqlSession.insert("phonebooktest.insert", personVo);
+		
 		return count;
 	}
 
@@ -62,7 +64,7 @@ public class PhonebookDao {
 	public List<PersonVo> getPersonList() {
 		System.out.println("PhonebookDao.getPersonList()");
 		
-		List<PersonVo> personList = sqlSession.selectList("phonebook.selectList");
+		List<PersonVo> personList = sqlSession.selectList("phonebooktest.selectList");
 		
 		return personList;
 	}

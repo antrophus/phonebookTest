@@ -10,11 +10,11 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.javaex</groupId>
-	<artifactId>phonebook3</artifactId>
+	<artifactId>phonebooktest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>phonebook3</name>
-	<description>phonebook3 project for Spring Boot</description>
+	<name>phonebooktest</name>
+	<description>phonebooktest project for Spring Boot</description>
 	<url />
 	<licenses>
 		<license />

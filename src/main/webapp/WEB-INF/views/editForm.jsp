@@ -14,7 +14,7 @@
 
 	<p>수정할 항목을 입력한 후 수정버튼을 클릭해 주세요</p>
 	
-	<form action="/phonebook3/edit" method="post">
+	<form action="/phonebooktest/edit" method="post">
 		<div>
 			<label for="txt-name"> 이름(name): </label> 
 			<input id="txt-name" type="text" name="name" value="" placeholder="${personVo.name}">
@@ -31,6 +31,6 @@
 		<button type="submit">수정(전송)</button>
 	</form>
 	<br><br>
-	<a href="/phonebook3/list">리스트로 가기</a>
+	<a href="/phonebooktest/list">리스트로 가기</a>
 </body>
 </html>

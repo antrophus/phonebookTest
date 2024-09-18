@@ -6,42 +6,43 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+        #btndel a {
+            color: black; 
+            text-decoration: none; 
+        }
+</style>
 </head>
 <body>
 
 	<h1>전화번호부</h1>
-	
+
 	<h2>전화번호-리스트</h2>
-	
+
 	<p>등록된 전화번호 리스트 입니다.</p>
 
-	<c:forEach items="${requestScope.personList }" var="personVo">
 	<table border="1">
 		<tbody>
 			<tr>
 				<th>이름(name)</th>
-				<td>${personVo.name}</td>
-			</tr>
-			<tr>
 				<th>핸드폰(hp)</th>
-				<td>${personVo.hp}</td>
-			</tr>
-			<tr>
 				<th>회사(company)</th>
-				<td>${personVo.company}</td>
+				<th colspan="2">관리</th>
 			</tr>
-			<tr>
-				<td><a href="/phonebook3/editform?no=${personVo.personId}">[수정폼으로 이동]</a></td>
-				<td><a href="/phonebook3/delete?no=${personVo.personId}">[삭제]</a></td>
-			</tr>
-			
+			<c:forEach items="${requestScope.personList }" var="personVo">
+				<tr>
+					<td>${personVo.name}</td>
+					<td>${personVo.hp}</td>
+					<td>${personVo.company}</td>
+					<td><button id="btndel">
+							<a href="/phonebooktest/delete?no=${personVo.personId}">삭제하기</a>
+						</button> <a href="/phonebooktest/editform?no=${personVo.personId}">[수정폼이동]</a></td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
 	<br>
-	</c:forEach>
 	<br>
-	<a href="/phonebook3/writeform">등록폼으로 이동</a>
-	
-	
+	<a href="/phonebooktest/writeform">등록폼으로 이동</a>
 </body>
 </html>

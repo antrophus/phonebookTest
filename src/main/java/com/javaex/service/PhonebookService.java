@@ -1,6 +1,7 @@
 package com.javaex.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,6 +44,7 @@ public class PhonebookService {
 
 	/* 수정폼 */
 	public PersonVo exeEditForm(int no) {
+		System.out.println("PhonebookService.exeEditForm()");
 		// phonebookDao의 메소드를 이용해 수정할 데이터 가져오기
 		PersonVo personVo = phonebookDao.getPersonOne(no);
 
@@ -51,10 +53,9 @@ public class PhonebookService {
 
 	/* 수정 */
 	public int exeEditPerson(PersonVo personVo) {
-
+		System.out.println("PhonebookService.exeEditPerson()");
 		int count = phonebookDao.updatePerson(personVo);
 
 		return count;
 	}
-
 }
